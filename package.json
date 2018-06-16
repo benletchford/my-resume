@@ -6,7 +6,7 @@
   "license": "MIT",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://benletchford.github.io/my-resume",
+  "homepage": "https://www.benl.com.au/my-resume/",
   "dependencies": {
     "bootstrap": "3.3.6",
     "codemirror": "^5.38.0",
