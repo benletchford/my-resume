@@ -1,0 +1,163 @@
+@media print {
+  /* #theme-ben {
+    transform: none;
+    position: inline;
+    left: 0;
+  } */
+}
+#theme-ben {
+  font-family: PT Sans,sans-serif;
+  font-size: 14px;
+  height: 297mm;
+  width: 210mm;
+  position:relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#theme-ben .nopadding {
+  padding: 0!important;
+  margin: 0!important;
+}
+#theme-ben hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 1px;
+  background: transparent;
+  width: 100%;
+  border: none;
+  border-top: solid 1px #bfc0c3;
+}
+#theme-ben .name {
+  text-align: right;
+  font-size: 5em;
+  margin-bottom: -15px;
+}
+#theme-ben .name .first {
+  color: #00a4d8!important;
+  font-weight: bold;
+}
+#theme-ben .name .last {
+  color: #777776!important;
+}
+#theme-ben .role-and-blurb {
+  height: 50px;
+}
+#theme-ben .role-and-blurb .blurb {
+  float: left;
+  font-size: 1.3em;
+  font-style: italic;
+  color: #97999c!important;
+}
+#theme-ben .role-and-blurb .role {
+  float: right;
+  font-size: 1.8em;
+  color: #8a8b8a!important;
+}
+#theme-ben .col-left {
+  padding-right: 20px;
+  text-align: right;
+}
+#theme-ben .col-right {
+  padding-left: 20px;
+  text-align: left;
+}
+#theme-ben .section .title {
+  background-color: #00a4d8!important;
+  color: #ffffff!important;
+  font-weight: bold;
+  font-size: 2em;
+  padding: 0 5px 0 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+#theme-ben .section.left .title {
+  padding-right: 35px;
+}
+#theme-ben .section.right .title {
+  padding-left: 35px;
+}
+#theme-ben .personal .item-name {
+  font-size: 1.3em;
+  color: #8a8b8a!important;
+}
+#theme-ben .personal .text {
+  font-size: 1.3em;
+  color: #000000!important;
+  font-weight: bold;
+}
+#theme-ben .skills hr {
+  margin-top: 0;
+}
+#theme-ben .skills .name-and-stars {
+  height: 30px;
+  line-height: 30px;
+  clear: both;
+}
+#theme-ben .skills .item-name {
+  float: left;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #000000!important;
+}
+#theme-ben .skills .stars {
+  font-size: 1.8em;
+  float: right;
+}
+#theme-ben .skills .stars .glyphicon-star {
+  color: orange!important;
+}
+#theme-ben .skills .stars .star:before {
+  color: #eab101!important;
+}
+#theme-ben .skills .stars .unstar:before {
+  color: #343434!important;
+}
+#theme-ben .skills .text {
+  float: left;
+  margin-top: -5px;
+  margin-bottom: 5px;
+  color: #8a8b8a!important;
+}
+#theme-ben .skills .subskills {
+  margin-bottom: 10px;
+}
+#theme-ben .skills .subskills .row {
+  clear: both;
+  text-align: left;
+}
+#theme-ben .skills .subskills .tick {
+  padding-right: 5px;
+}
+#theme-ben .skills .subskills .tick:before {
+  color: #00a4d8!important;
+}
+#theme-ben .skills .subskills .subskill-name {
+  font-weight: bold;
+}
+#theme-ben .work-history .date {
+  color: #8a8b8a!important;
+}
+#theme-ben .work-history .place {
+  font-size: 1.3em;
+  font-weight: bold;
+  font-style: italic;
+}
+#theme-ben .work-history .role {
+  font-size: 1.3em;
+  color: #97999c!important;
+}
+#theme-ben .work-history .text {
+  color: #8a8b8a!important;
+}
+#theme-ben .education .date {
+  color: #8a8b8a!important;
+}
+#theme-ben .education .place {
+  font-size: 1.3em;
+  font-weight: bold;
+  font-style: italic;
+}
+#theme-ben .education .degree {
+  font-size: 1.3em;
+  color: #97999c!important;
+}
