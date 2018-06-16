@@ -1,15 +1,10 @@
-@media print {
-  /* #theme-ben {
-    transform: none;
-    position: inline;
-    left: 0;
-  } */
-}
 #theme-ben {
   font-family: PT Sans,sans-serif;
   font-size: 14px;
   height: 297mm;
   width: 210mm;
+}
+#viewer:not(.print-only) > #theme-ben {
   position:relative;
   left: 50%;
   transform: translateX(-50%);
