@@ -2,7 +2,7 @@
   .print-only {
     display: inline!important;
   }
-  .SplitPane {
+  .SplitPane,.display-only {
     display: none!important;
   }
 }

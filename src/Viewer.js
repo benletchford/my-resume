@@ -7,8 +7,12 @@ import store from './store.js'
 
 class Viewer extends Component {
   render() {
+    var classNames = []
+    if(this.props.printOnly) classNames.push("print-only")
+    if(this.props.displayOnly) classNames.push("display-only")
+
     return (
-      <div id="viewer" className={this.props.printOnly ? "print-only" : ""}>
+      <div id="viewer" className={classNames.join(" ")}>
         <div id="theme-ben">
           <div className="name">
             <span className="first">{store.src.resume.firstName}</span>
