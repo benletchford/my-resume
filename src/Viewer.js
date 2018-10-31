@@ -15,16 +15,18 @@ class Viewer extends Component {
       <div id="viewer" className={classNames.join(" ")}>
         <div id="theme-ben">
           <div className="name">
-            <span className="first">{store.src.resume.firstName}</span>
-            <span className="last">{store.src.resume.lastName}</span>
+            {store.src.resume.firstName ? <span className="first">{store.src.resume.firstName}</span> : ''}
+            {store.src.resume.lastName ? <span className="last">{store.src.resume.lastName}</span> : ''}
           </div>
 
-          <hr/>
 
-          <div className="role-and-blurb">
-            <div className="blurb">{store.src.resume.blurb}</div>
-            <div className="role">{store.src.resume.role}</div>
-          </div>
+          {store.src.resume.blurb || store.src.resume.role ?
+            <div className="role-and-blurb">
+              <hr/>
+              {store.src.resume.blurb ? <div className="blurb">{store.src.resume.blurb}</div> : ''}
+              {store.src.resume.role ? <div className="role">{store.src.resume.role}</div> : ''}
+            </div>
+          : ''}
 
           <div className="row">
             <div className="col-xs-5 col-left">
@@ -61,8 +63,8 @@ class Viewer extends Component {
                         </div>
                         <div className="item-name">{item.field}</div>
                       </div>
-                      <hr />
-                      <div className="text">{new Date().getFullYear() - item.started} years experience</div>
+                      {(item.started || item.subskills) ? <hr /> : ''}
+                      {(item.started) ? <div className="text">{new Date().getFullYear() - item.started} years experience</div> : ''}
                       <div className="subskills">
                         {(item.subskills) ? <div className="row nopadding">
                           {Array.apply(null, item.subskills).map(function(item, i){
