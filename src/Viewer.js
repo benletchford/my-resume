@@ -3,28 +3,43 @@ import { view } from 'react-easy-state'
 
 import './css/theme-ben.css'
 import store from './store.js'
+import qs from 'qs'
 
 
 class Viewer extends Component {
+  constructor(props) {
+    super(props);
+
+    var query = qs.parse(window.location.search.substring(1))
+    if (query.gist !== undefined) {
+      this.state = { loading: true };
+      fetch(query.gist)
+        .then(response => response.json())
+        .then(json => this.setState({ data: { src: json }, loading: false }));
+    } else {
+      this.state = { data: store, loading: false }
+    }
+  }
+
   render() {
     var classNames = []
     if(this.props.printOnly) classNames.push("print-only")
     if(this.props.displayOnly) classNames.push("display-only")
 
-    return (
+    return (this.state.loading ? null : (
       <div id="viewer" className={classNames.join(" ")}>
         <div id="theme-ben">
           <div className="name">
-            {store.src.resume.firstName ? <span className="first">{store.src.resume.firstName}</span> : ''}
-            {store.src.resume.lastName ? <span className="last">{store.src.resume.lastName}</span> : ''}
+            {this.state.data.src.resume.firstName ? <span className="first">{this.state.data.src.resume.firstName}</span> : ''}
+            {this.state.data.src.resume.lastName ? <span className="last">{this.state.data.src.resume.lastName}</span> : ''}
           </div>
 
 
-          {store.src.resume.blurb || store.src.resume.role ?
+          {this.state.data.src.resume.blurb || this.state.data.src.resume.role ?
             <div className="role-and-blurb">
               <hr/>
-              {store.src.resume.blurb ? <div className="blurb">{store.src.resume.blurb}</div> : ''}
-              {store.src.resume.role ? <div className="role">{store.src.resume.role}</div> : ''}
+              {this.state.data.src.resume.blurb ? <div className="blurb">{this.state.data.src.resume.blurb}</div> : ''}
+              {this.state.data.src.resume.role ? <div className="role">{this.state.data.src.resume.role}</div> : ''}
             </div>
           : ''}
 
@@ -32,7 +47,7 @@ class Viewer extends Component {
             <div className="col-xs-5 col-left">
               <div className="section left personal">
                 <div className="title">Personal</div>
-                <div className="items">{Array.apply(null, store.src.resume.personal).map(function(item, i){
+                <div className="items">{Array.apply(null, this.state.data.src.resume.personal).map(function(item, i){
                   return (
                     <div key={"personal-item-" + i}>
                       <div className="item-name">{item.field}</div>
@@ -41,7 +56,7 @@ class Viewer extends Component {
                             <div key={"personal-item-text-" + i + "-" + j} className="text">{item}</div>
                         );
                       }, this)}
-                      {(i !== store.src.resume.personal.length - 1) ? <hr /> : ''}
+                      {(i !== this.state.data.src.resume.personal.length - 1) ? <hr /> : ''}
                     </div>
                   );
                 }, this)}</div>
@@ -49,7 +64,7 @@ class Viewer extends Component {
 
               <div className="section left skills">
                 <div className="title">Skills</div>
-                <div className="items">{Array.apply(null, store.src.resume.skills).map(function(item, i){
+                <div className="items">{Array.apply(null, this.state.data.src.resume.skills).map(function(item, i){
                   return (
                     <div key={"skill-item-" + i}>
                       <div className="name-and-stars">
@@ -88,7 +103,7 @@ class Viewer extends Component {
             <div className="col-xs-7 col-right">
               <div className="section right work-history">
                 <div className="title">Work History</div>
-                <div className="items">{Array.apply(null, store.src.resume.work).map(function(item, i){
+                <div className="items">{Array.apply(null, this.state.data.src.resume.work).map(function(item, i){
                   return (
                     <div key={"work-item-" + i}>
                       <div className="date">{item.startDate + " - " + item.endDate}</div>
@@ -106,7 +121,7 @@ class Viewer extends Component {
                           </div>
                         )
                       }, this)}
-                      {(i !== store.src.resume.work.length - 1) ? <hr /> : ''}
+                      {(i !== this.state.data.src.resume.work.length - 1) ? <hr /> : ''}
                     </div>
                   )
                 }, this)}</div>
@@ -114,13 +129,13 @@ class Viewer extends Component {
 
               <div className="section right education">
                 <div className="title">Education</div>
-                <div className="items">{Array.apply(null, store.src.resume.education).map(function(item, i){
+                <div className="items">{Array.apply(null, this.state.data.src.resume.education).map(function(item, i){
                   return (
                     <div key={"education-item-" + i}>
                       <div className="date">{item.startDate + " - " + item.endDate}</div>
                       <div className="place">{item.name}</div>
                       <div className="degree">{item.degree}</div>
-                      {(i !== store.src.resume.education.length - 1) ? <hr /> : ''}
+                      {(i !== this.state.data.src.resume.education.length - 1) ? <hr /> : ''}
                     </div>
                   )
                 }, this)}</div>
@@ -129,7 +144,7 @@ class Viewer extends Component {
           </div>
         </div>
       </div>
-    );
+    ));
   }
 }
 

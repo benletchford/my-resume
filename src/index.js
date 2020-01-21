@@ -10,6 +10,6 @@ import './css/app.css'
 
 // substring here removes the `?` at the beginning of the string.
 var query = qs.parse(window.location.search.substring(1))
-var mode = query.mode === 'd' || query.mode === 'display' ? 'display' : 'edit'
+var mode = query.mode === 'd' || query.mode === 'display' || query.gist !== undefined ? 'display' : 'edit'
 
 ReactDOM.render(<App mode={mode}/>, document.getElementById('root'));
