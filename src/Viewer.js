@@ -12,7 +12,7 @@ class Viewer extends Component {
     var query = qs.parse(window.location.search.substring(1));
     if (query.gist !== undefined) {
       this.state = { loading: true };
-      fetch(query.gist)
+      fetch(`${query.gist}?r=${Math.random()}`)
         .then(response => response.json())
         .then(json => this.setState({ data: { src: json }, loading: false }));
     } else {
