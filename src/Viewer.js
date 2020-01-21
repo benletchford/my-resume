@@ -98,6 +98,32 @@ class Viewer extends Component {
                 </div>
               </div>
 
+              <div className="section left education">
+                <div className="title">Education</div>
+                <div className="items">
+                  {Array.apply(null, this.state.data.src.resume.education).map(
+                    function(item, i) {
+                      return (
+                        <div key={"education-item-" + i}>
+                          <div className="date">
+                            {item.startDate + " - " + item.endDate}
+                          </div>
+                          <div className="place">{item.name}</div>
+                          <div className="degree">{item.degree}</div>
+                          {i !==
+                          this.state.data.src.resume.education.length - 1 ? (
+                            <hr />
+                          ) : (
+                            ""
+                          )}
+                        </div>
+                      );
+                    },
+                    this
+                  )}
+                </div>
+              </div>
+
               <div className="section left skills">
                 <div className="title">Skills</div>
                 <div className="items">
@@ -175,32 +201,6 @@ class Viewer extends Component {
             </div>
 
             <div className="col-xs-7 col-right">
-              <div className="section right education">
-                <div className="title">Education</div>
-                <div className="items">
-                  {Array.apply(null, this.state.data.src.resume.education).map(
-                    function(item, i) {
-                      return (
-                        <div key={"education-item-" + i}>
-                          <div className="date">
-                            {item.startDate + " - " + item.endDate}
-                          </div>
-                          <div className="place">{item.name}</div>
-                          <div className="degree">{item.degree}</div>
-                          {i !==
-                          this.state.data.src.resume.education.length - 1 ? (
-                            <hr />
-                          ) : (
-                            ""
-                          )}
-                        </div>
-                      );
-                    },
-                    this
-                  )}
-                </div>
-              </div>
-
               <div className="section right work-history">
                 <div className="title">Work History</div>
                 <div className="items">
