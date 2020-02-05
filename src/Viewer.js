@@ -106,9 +106,11 @@ class Viewer extends Component {
                     function(item, i) {
                       return (
                         <div key={"education-item-" + i}>
-                          <div className="date">
-                            {item.startDate + " - " + item.endDate}
-                          </div>
+                          {item.startDate && item.endDate ? (
+                            <div className="date">
+                              {item.startDate + " - " + item.endDate}
+                            </div>
+                          ) : null}
                           <div className="place">{item.name}</div>
                           <div className="degree">{item.degree}</div>
                           {i !==
