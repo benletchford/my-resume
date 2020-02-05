@@ -18,6 +18,7 @@
     "react-codemirror": "^1.0.0",
     "react-dom": "^16.3.1",
     "react-easy-state": "^5.0.0",
+    "react-markdown": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-split-pane": "^0.1.77"
   },

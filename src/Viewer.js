@@ -4,6 +4,7 @@ import { view } from "react-easy-state";
 import "./css/theme-ben.css";
 import store from "./store.js";
 import qs from "qs";
+import ReactMarkdown from "react-markdown";
 
 class Viewer extends Component {
   constructor(props) {
@@ -218,16 +219,12 @@ class Viewer extends Component {
                               <div
                                 key={"work-history-item-text-" + i + "-" + j}
                               >
-                                <br />
-                                {item[0] === "*" &&
-                                item[item.length - 1] === "*" ? (
-                                  <i>
-                                    <div className="text">
-                                      {item.substring(1, item.length - 1)}
-                                    </div>
-                                  </i>
+                                {item === "" ? (
+                                  <br />
                                 ) : (
-                                  <div className="text">{item}</div>
+                                  <div className="text">
+                                    <ReactMarkdown source={item} />
+                                  </div>
                                 )}
                               </div>
                             );
