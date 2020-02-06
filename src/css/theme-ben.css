@@ -39,8 +39,10 @@
 }
 #theme-ben .role-and-blurb .blurb {
   float: left;
+  clear: both;
   font-size: 1.3em;
   font-style: italic;
+  width: 400px;
   color: #97999c!important;
 }
 #theme-ben .role-and-blurb .role {

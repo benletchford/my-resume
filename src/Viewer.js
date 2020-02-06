@@ -65,7 +65,7 @@ class Viewer extends Component {
                 <div className="role-and-blurb">
                   <hr />
                   {this.state.data.src.resume.blurb ? (
-                    <div className="blurb">{this.state.data.src.resume.blurb}</div>
+                    <div className="blurb"><ReactMarkdown source={this.state.data.src.resume.blurb} /></div>
                   ) : (
                       ""
                     )}
