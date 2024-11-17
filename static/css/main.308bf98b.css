@@ -796,15 +796,13 @@ th {
 }
 @font-face {
   font-family: Glyphicons Halflings;
-  src: url(static/media/glyphicons-halflings-regular.f4769f9b.eot);
-  src: url(static/media/glyphicons-halflings-regular.f4769f9b.eot?#iefix)
+  src: url(../media/glyphicons-halflings-regular.f4769f9b.eot);
+  src: url(../media/glyphicons-halflings-regular.f4769f9b.eot?#iefix)
       format("embedded-opentype"),
-    url(static/media/glyphicons-halflings-regular.448c34a5.woff2)
-      format("woff2"),
-    url(static/media/glyphicons-halflings-regular.fa277232.woff) format("woff"),
-    url(static/media/glyphicons-halflings-regular.e18bbf61.ttf)
-      format("truetype"),
-    url(static/media/glyphicons-halflings-regular.89889688.svg#glyphicons_halflingsregular)
+    url(../media/glyphicons-halflings-regular.448c34a5.woff2) format("woff2"),
+    url(../media/glyphicons-halflings-regular.fa277232.woff) format("woff"),
+    url(../media/glyphicons-halflings-regular.e18bbf61.ttf) format("truetype"),
+    url(../media/glyphicons-halflings-regular.89889688.svg#glyphicons_halflingsregular)
       format("svg");
 }
 .glyphicon {
